@@ -1,9 +1,5 @@
 let lastDragged = null;
 
-function createDragables() {
-    const container = document.getElementById("symbol-container");
-}
-
 function createDropables() {
     const container = document.getElementById("empty-cells");
     container.childNodes.forEach(node => {
@@ -14,7 +10,6 @@ function createDropables() {
             }
             e.preventDefault();
             let data = e.dataTransfer.getData("text");
-            console.log(data);
 
             const icon = document.createElement("img");
             icon.setAttribute("src", data);
@@ -54,13 +49,13 @@ async function printToPdf() {
         let counter = 1;
         for (const node of row.childNodes) {
             const svg = await svgToPath(node.getAttribute("src"));
-            counter++;
 
-            console.log(i);
             body[counter][i] = {
               svg: svg,
               width: 96
             };
+
+            counter++;
         }
     }
 
