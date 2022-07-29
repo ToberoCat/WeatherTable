@@ -1,0 +1,30 @@
+div.weather {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    background-color: #ededed;
+    border-color: transparent;
+    border-radius: 15px;
+    box-shadow: 0 0 9px -4px rgba(0, 0, 0, 0.6);
+    padding: 2px 2px 2px 2px;
+}
+
+img.weather {
+    width: 96px;
+    height: 96px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: -43%;
+    right: 0;
+    bottom: 0;
+    cursor: grab;
+}
+
+#symbol-container {
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 100%;
+}

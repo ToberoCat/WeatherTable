@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <link href="icons/static/cloudy-day-1.svg" rel="icon" type="image/x-icon">
+
+        <title>Wetter</title>
+
+        <!-- Imports -->
+        <link href="styling/index.css" rel="stylesheet">
+        <link href="styling/weather-symbols.css" rel="stylesheet">
+        <link href="styling/table.css" rel="stylesheet">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.5/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.5/vfs_fonts.min.js"></script>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <!-- Available symbols -->
+        <div id="symbol-container" class="unselectable">
+            <div class="weather">
+                <img id="day" src="icons/animated/day.svg" class="weather" title="Sonnig" alt="Sonnig">
+            </div>
+            <div class="weather">
+                <img id="night" src="icons/animated/night.svg" class="weather" title="Nacht" alt="Nacht">
+            </div>
+            <div class="weather">
+                <img id="rainy" src="icons/animated/rainy-4.svg" class="weather" title="Regnerisch" alt="Regnerisch">
+            </div>
+            <div class="weather">
+                <img id="snowy" src="icons/animated/snowy-6.svg" class="weather" title="Schneit" alt="Schneit">
+            </div>
+            <div class="weather">
+                <img id="thunder" src="icons/animated/thunder.svg" class="weather" title="Gewitter" alt="Gewitter">
+            </div>
+        </div>
+
+        <!-- Credits -->
+        <h3 id="credits">
+            Icons provided by
+            <a href="https://www.amcharts.com/free-animated-svg-weather-icons/">amcharts</a>
+        </h3>
+
+        <!-- Garbage can -->
+        <div id="garbage-can">
+            <img width="72px" height="auto" src="icons/iconmonstr-trash-can-1.svg" alt="garbage" title="Mülleimer">
+        </div>
+
+        <!-- Timetable -->
+        <table id="weather-data" class="unselectable">
+            <tr>
+                <th>6:00</th>
+                <th>9:00</th>
+                <th>12:00</th>
+                <th>15:00</th>
+                <th>18:00</th>
+                <th>21:00</th>
+                <th>0:00</th>
+                <th>3:00</th>
+            </tr>
+            <tr id="empty-cells">
+                <td id="cell-0"></td>
+                <td id="cell-1"></td>
+                <td id="cell-2"></td>
+                <td id="cell-3"></td>
+                <td id="cell-4"></td>
+                <td id="cell-5"></td>
+                <td id="cell-6"></td>
+                <td id="cell-7"></td>
+            </tr>
+        </table>
+
+        <!-- Export -->
+        <button id="export-pdf" class="unselectable" onclick="printToPdf()">Exportiere zu PDF</button>
+
+        <!-- Script -->
+        <script>
+            createDragables();
+            createDropables();
+            createGarbageCan();
+        </script>
+    </body>
+</html>
